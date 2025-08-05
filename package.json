@@ -14,5 +14,8 @@
     "mysql"
   ],
   "author": "Cássio jhonatan Anselmo Cruz",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
