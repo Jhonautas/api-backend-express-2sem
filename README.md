@@ -42,3 +42,12 @@ ou
 - DELETE: Usado para remover um recurso.
 
 - Como mudar o formato de importação/exportação de require para import(Adicionar no package.json a propriedade type: "module")
+- --watch (parametro para rodar um js em modo dev, que permite rodar novamente o script quando algum arquivo é alterado)
+
+app.post('/produto', (req, res) => {
+    res.json({message: 'Criado com sucessos!'})
+})
+
+- metodo criar/inserir: post
+- Rota ou endereço: /produto
+- tipo de resposta: json
