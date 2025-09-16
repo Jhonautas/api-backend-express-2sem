@@ -1,33 +1,22 @@
 import express from "express";
+import profileRouter from './routers/profileRouter.js'
+import productRouter from './routers/productRouter.js'
+import carRouter from './routers/carRouter.js'
+import supplierRouter from './routers/supplierRouter.js'
+import cors from 'cors'
+import { logger } from '../src/middlewares/logger.js'
 
-const app = express();
-const port = 3000;
+const app = express()
+const port = 3333
 
+app.use(logger)
+app.use(cors()) // Habilitar o CORS para todas as rotas
+app.use(express.json()) // Converter o JSON que chegou na requisição em um objeto js e vai salvar no req.body
 
-app.use(express.json()
-)
-app.get("/profile", (req, res) => {
-    console.log("Dados do usúario coletados com sucesso!");
-     res.json({ profile:"Informações coletadas com sucesso!" });
-});
-
-app.post("/profile", (req, res) => {
-    console.log(dados);
-     res.json({ profile: "Usuário criado com sucesso!" });
-});
-
-app.put("/profile", (req, res) => {
-    const dados = req.body 
-    console.log("Dados do usuário atualizados com sucesso");
-    res.json({ 
-      profile: "Dados do usuário com editado com sucesso!",
-      profile: dados });
-});
-
-app.delete("/profile", (req, res) => {
-    console.log("Usuário Deletado com sucesso");
-    res.json({ profile: "Usuário deletado com sucesso!" });
-});
+app.use('/profile', profileRouter)
+app.use('/product', productRouter)
+app.use('/car', carRouter) 
+app.use('/supplier', supplierRouter)
 
 app.listen(port, () => {
     console.log(`Api criada com sucesso http://localhost:${port}`);
