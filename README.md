@@ -43,6 +43,24 @@ ou
 
 - Como mudar o formato de importação/exportação de require para import(Adicionar no package.json a propriedade type: "module")
 - --watch (parametro para rodar um js em modo dev, que permite rodar novamente o script quando algum arquivo é alterado)
+- Router (Para que separar as rotas?)
+
+
+1- Oque é padrão de projeto?
+É uma forma de codificar/escrever o código/projeto de forma amplamente conhecida(mundialmente)
+
+2 - Oque significa MVC?
+Sua função é de organizar o código, e isso é feito dividindo tudo em 3 camadas.
+
+M - Model (No model fica duas funcionalidades, a função de acessar o banco de dados(manipulação de dados) e definição das regras dos negócios/projeto)
+
+V - View (Camada de visualização/apresentação e interação com usuário.) responsabilidade do front-end.
+
+C - Controller (Controla entrada, processamento dos dados e da a saída de dados) 	
+
+
+# Sintaxe básica de uma rota no express
+Sintaxe básica de uma rota de API
 
 app.post('/produto', (req, res) => {
     res.json({message: 'Criado com sucessos!'})
@@ -51,3 +69,41 @@ app.post('/produto', (req, res) => {
 - metodo criar/inserir: post
 - Rota ou endereço: /produto
 - tipo de resposta: json
+
+    Oque é um ORM:
+- é uma forma de relacionar de meu obj javacsript e a base de dados. 
+
+    Porque usar um ORM:
+- facilita ao executar comandos no banco(Ja tem funções prontas).
+- Facilidade em modificiar o banco de dados.
+
+Para Instalar o Prisma
+- npm i prisma -D
+
+dependencias. 
+projeto: São quando usamos codigos para mexer dentro do projeto.
+dev: São dependencias que voce usa apenas para desenvolver o projeto. 
+
+### Comandos do Prisma
+- Instalação do Prisma
+- npm i prisma - D
+- npm i @prisma/client
+
+- inicializar o Prisma
+- npx prisma init
+
+- Gerar o model do prisma apartir de um Banco de Dados existente.
+- npx prisma db pull
+
+- Gerar o banco de dados apartir de um model de prisma.
+- npx prisma db push
+
+- Gerar os arquivos necessários para usar o prisma client no codigo.
+- npx prisma generate
+
+## Middleware
+
+
+middleware - padrao de projeto do express que organiza um codigo em uma sequencia de funções e cada uma dessas funções tem uma responsbilidade e quando termina essa função ela manda para o proximo middleware
+
+ funçao next - confirma a finalização das obrigações do middleware e passa para o proximo
