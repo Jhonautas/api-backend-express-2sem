@@ -25,7 +25,10 @@ ou
 
 - O que é Node.js (É um ambiente run time que roda no js, e ele tbm é crossplataforma(roda em vários navegadores))
 
-- O que é Express (É um framework para desenvolver o backend do site)
+- npm init → cria o package.json (estrutura inicial do projeto).
+- npm i → instala pacotes (e cria a pasta node_modules + package-lock.json).
+
+- O que é Express (É um framework para desenvolver o backend(API) do site)
 
 - Protocolo http (é o protocolo que estabele as regras das requisições e repostas da web)
 
@@ -42,9 +45,15 @@ ou
 - DELETE: Usado para remover um recurso.
 
 - Como mudar o formato de importação/exportação de require para import(Adicionar no package.json a propriedade type: "module")
-- --watch (parametro para rodar um js em modo dev, que permite rodar novamente o script quando algum arquivo é alterado)
-- Router (Para que separar as rotas?)
+- A propriedade "type": "module" serve para ativar o padrão moderno de módulos do JavaScript (import/export) no Node.js, tornando o código mais compatível com o que já se usa no navegador e em frameworks modernos como React, Next.js, etc
 
+- --watch (parametro para rodar um js em modo dev, que permite rodar novamente o script quando algum arquivo é alterado)
+
+- Router (Organizar o codigo e escabilidade, e ser mais facil para manutenção)
+(Para que separar as rotas?)
+
+- Parâmetros de rota. Exemplo: /:id
+(Ele tem a função de serve para criar rotas dinâmicas, onde o valor pode mudar a cada requisição, e o servidor consegue capturar esse valor para buscar dados, editar ou deletar recursos específicos )
 
 1- Oque é padrão de projeto?
 É uma forma de codificar/escrever o código/projeto de forma amplamente conhecida(mundialmente)
@@ -102,7 +111,6 @@ dev: São dependencias que voce usa apenas para desenvolver o projeto.
 - npx prisma generate
 
 ## Middleware
-
 
 middleware - padrao de projeto do express que organiza um codigo em uma sequencia de funções e cada uma dessas funções tem uma responsbilidade e quando termina essa função ela manda para o proximo middleware
 
